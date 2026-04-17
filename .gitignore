@@ -1,0 +1,51 @@
+# Build outputs
+/build
+*.o
+*.d
+*.elf
+*.bin
+*.pdi
+
+# Logs
+/logs
+*.log
+
+# Lock files
+.lock
+*.lock
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.zip
+*.debug
+*.hw
+*.cache/
+*.gen/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.xpr.backup
+
+# Vitis workspace
+.metadata/
+RemoteSystemsTempFiles/
+*.sdk/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

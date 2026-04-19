@@ -9,59 +9,52 @@
 XGpio led, sw;
 
 void gpio_init(){
-    int status1, status2;
+    int statusl, statuss;
 
-    // Initialize GPIO instance 0 (for LEDs)
-    // Device ID = 0 (first GPIO instance)
-    status1 = XGpio_Initialize(&led, 0);
-    if (status1 != XST_SUCCESS) {
-        xil_printf("GPIO 0 (LED) initialization failed!\n\r");
-        return;
-    }
+    xil_printf("\n=== GPIO Initialization ===\n");
 
-    // Initialize GPIO instance 1 (for Switches)
-    // Device ID = 1 (second GPIO instance)
-    status2 = XGpio_Initialize(&sw, 1);
-    if (status2 != XST_SUCCESS) {
-        xil_printf("GPIO 1 (SW) initialization failed!\n\r");
-        return;
-    }
+    // SDT mode: Use base addresses instead of device IDs
+    // Initialize LED GPIO (base address 0x41200000)
+    statusl = XGpio_Initialize(&led, XPAR_XGPIO_0_BASEADDR);
+    xil_printf("LED init: %d\n", statusl);
 
-    // Set data direction for GPIO 0 (LEDs - Output)
-    XGpio_SetDataDirection(&led, 1, 0x00); // Channel 1 = Output
+    // Initialize Switch GPIO (base address 0x41210000)
+    statuss = XGpio_Initialize(&sw, XPAR_XGPIO_1_BASEADDR);
+    xil_printf("SW init: %d\n", statuss);
 
-    // Set data direction for GPIO 1 (Switches - Input)
-    XGpio_SetDataDirection(&sw, 1, 0xFF); // Channel 1 = Input
-
-    xil_printf("GPIO initialization successful!\n\r");
-    xil_printf("GPIO 0 (LED) at 0x%08X\n\r", XPAR_XGPIO_0_BASEADDR);
-    xil_printf("GPIO 1 (SW)  at 0x%08X\n\r", XPAR_XGPIO_1_BASEADDR);
+    if (statusl == XST_SUCCESS && statuss == XST_SUCCESS)
+        xil_printf("DEVICE INIT SUCCESSFUL.\n");
+    else
+        xil_printf("DEVICE INIT FAILED.\n");
 }
 
 int main()
 {
-    u8 swValue = 0;
-
+    u32 swRead = 0;
     init_platform();
-
-    xil_printf("\n\r=== Multiple Instance GPIO Test ===\n\r");
     gpio_init();
 
-    xil_printf("\n\rMirroring switches to LEDs...\n\r");
-    xil_printf("Toggle switches to see LEDs change.\n\r\n\r");
+    // Set directions
+    XGpio_SetDataDirection(&led, 1, 0x00);  // LED as output
+    XGpio_SetDataDirection(&sw, 1, 0xFF);   // Switch as input
 
-    // Main loop - mirror switches to LEDs
-    while (1) {
-        // Read switches from GPIO 1
-        swValue = XGpio_DiscreteRead(&sw, 1);
+    // Test LED GPIO first - blink pattern
+    xil_printf("\n=== Testing LED GPIO ===\n");
+    xil_printf("Turning all LEDs ON...\n");
+    XGpio_DiscreteWrite(&led, 1, 0xFF);
+    sleep(2);
+    xil_printf("Turning all LEDs OFF...\n");
+    XGpio_DiscreteWrite(&led, 1, 0x00);
+    sleep(2);
 
-        // Write to LEDs on GPIO 0
-        XGpio_DiscreteWrite(&led, 1, swValue);
-
-        // Print status every 2 seconds
-        xil_printf("Switch: 0x%02X -> LED: 0x%02X\n\r", swValue, swValue);
-        sleep(2);
+    xil_printf("\n=== Starting switch read loop ===\n");
+    while(1){
+        swRead = XGpio_DiscreteRead(&sw, 1);
+        XGpio_DiscreteWrite(&led, 1, swRead);
+        xil_printf("SwRead : 0x%02X (%d)\n", swRead, swRead);
+        sleep(1);
     }
+
 
     cleanup_platform();
     return 0;

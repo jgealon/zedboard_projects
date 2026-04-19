@@ -75,15 +75,15 @@
 
 #define XPAR_XGPIO_NUM_INSTANCES 2
 
-/* Definitions for peripheral LED */
-#define XPAR_LED_COMPATIBLE xlnx,axi-gpio-2.0
-#define XPAR_LED_BASEADDR 0x41200000
-#define XPAR_LED_HIGHADDR 0x4120ffff
-#define XPAR_LED_INTERRUPT_PRESENT 0x0
-#define XPAR_LED_IS_DUAL 0x0
-#define XPAR_LED_GPIO_WIDTH 0x8
+/* Definitions for peripheral AXI_GPIO_0 */
+#define XPAR_AXI_GPIO_0_COMPATIBLE xlnx,axi-gpio-2.0
+#define XPAR_AXI_GPIO_0_BASEADDR 0x41200000
+#define XPAR_AXI_GPIO_0_HIGHADDR 0x4120ffff
+#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0x0
+#define XPAR_AXI_GPIO_0_IS_DUAL 0x0
+#define XPAR_AXI_GPIO_0_GPIO_WIDTH 0x8
 
-/* Canonical definitions for peripheral LED */
+/* Canonical definitions for peripheral AXI_GPIO_0 */
 #define XPAR_XGPIO_0_BASEADDR 0x41200000
 #define XPAR_XGPIO_0_HIGHADDR 0x4120ffff
 #define XPAR_XGPIO_0_COMPATIBLE xlnx,axi-gpio-2.0
@@ -91,15 +91,15 @@
 #define XPAR_XGPIO_0_INTERRUPT_PRESENT 0x0
 #define XPAR_XGPIO_0_IS_DUAL 0x0
 
-/* Definitions for peripheral SWITCH */
-#define XPAR_SWITCH_COMPATIBLE xlnx,axi-gpio-2.0
-#define XPAR_SWITCH_BASEADDR 0x41210000
-#define XPAR_SWITCH_HIGHADDR 0x4121ffff
-#define XPAR_SWITCH_INTERRUPT_PRESENT 0x0
-#define XPAR_SWITCH_IS_DUAL 0x0
-#define XPAR_SWITCH_GPIO_WIDTH 0x8
+/* Definitions for peripheral AXI_GPIO_1 */
+#define XPAR_AXI_GPIO_1_COMPATIBLE xlnx,axi-gpio-2.0
+#define XPAR_AXI_GPIO_1_BASEADDR 0x41210000
+#define XPAR_AXI_GPIO_1_HIGHADDR 0x4121ffff
+#define XPAR_AXI_GPIO_1_INTERRUPT_PRESENT 0x0
+#define XPAR_AXI_GPIO_1_IS_DUAL 0x0
+#define XPAR_AXI_GPIO_1_GPIO_WIDTH 0x8
 
-/* Canonical definitions for peripheral SWITCH */
+/* Canonical definitions for peripheral AXI_GPIO_1 */
 #define XPAR_XGPIO_1_BASEADDR 0x41210000
 #define XPAR_XGPIO_1_HIGHADDR 0x4121ffff
 #define XPAR_XGPIO_1_COMPATIBLE xlnx,axi-gpio-2.0

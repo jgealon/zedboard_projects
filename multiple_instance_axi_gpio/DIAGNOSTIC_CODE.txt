@@ -1,0 +1,72 @@
+// Replace your gpio_init() function with this:
+
+void gpio_init(){
+    int statusl, statuss;
+
+    xil_printf("\n=== GPIO Initialization Debug ===\n");
+    xil_printf("Number of GPIO instances: %d\n", XPAR_XGPIO_NUM_INSTANCES);
+    xil_printf("GPIO 0 base address: 0x%08X\n", XPAR_XGPIO_0_BASEADDR);
+    xil_printf("GPIO 1 base address: 0x%08X\n", XPAR_XGPIO_1_BASEADDR);
+
+    // Try initializing GPIO with Device ID 0
+    xil_printf("\nTrying LED with Device ID 0...\n");
+    statusl = XGpio_Initialize(&led, 0);
+    xil_printf("  Status: %d ", statusl);
+    if (statusl == XST_SUCCESS)
+        xil_printf("(SUCCESS)\n");
+    else
+        xil_printf("(FAILED - Error code %d)\n", statusl);
+
+    // Try initializing GPIO with Device ID 1
+    xil_printf("Trying SW with Device ID 1...\n");
+    statuss = XGpio_Initialize(&sw, 1);
+    xil_printf("  Status: %d ", statuss);
+    if (statuss == XST_SUCCESS)
+        xil_printf("(SUCCESS)\n");
+    else
+        xil_printf("(FAILED - Error code %d)\n", statuss);
+
+    // Overall result
+    xil_printf("\n");
+    if (statusl == XST_SUCCESS && statuss == XST_SUCCESS) {
+        xil_printf("DEVICE INIT SUCCESSFUL.\n");
+    } else {
+        xil_printf("DEVICE INIT FAILED.\n");
+        xil_printf("One or both GPIOs failed to initialize!\n");
+    }
+}
+
+// And in main(), after gpio_init(), add this test:
+
+void test_both_gpios() {
+    xil_printf("\n=== Testing GPIO Hardware ===\n");
+
+    // Test GPIO 0 and 1 as outputs
+    xil_printf("Testing GPIO 0 as output (blinking)...\n");
+    XGpio_SetDataDirection(&led, 1, 0x00);
+    XGpio_DiscreteWrite(&led, 1, 0xFF);
+    xil_printf("  Wrote 0xFF to GPIO 0 - LEDs should be ON\n");
+    sleep(2);
+    XGpio_DiscreteWrite(&led, 1, 0x00);
+    xil_printf("  Wrote 0x00 to GPIO 0 - LEDs should be OFF\n");
+    sleep(2);
+
+    xil_printf("\nTesting GPIO 1 as output (blinking)...\n");
+    XGpio_SetDataDirection(&sw, 1, 0x00);
+    XGpio_DiscreteWrite(&sw, 1, 0xFF);
+    xil_printf("  Wrote 0xFF to GPIO 1 - LEDs should be ON\n");
+    sleep(2);
+    XGpio_DiscreteWrite(&sw, 1, 0x00);
+    xil_printf("  Wrote 0x00 to GPIO 1 - LEDs should be OFF\n");
+    sleep(2);
+}
+
+// In main(), call it:
+int main()
+{
+    init_platform();
+    gpio_init();
+    test_both_gpios();  // Add this line
+
+    // ... rest of your code
+}

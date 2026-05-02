@@ -4,10 +4,10 @@
 		compatible = "simple-bus";
 		#address-cells = <1>;
 		#size-cells = <1>;
-		led: axi_gpio@41200000 {
-			xlnx,gpio-board-interface = "leds_8bits";
+		axi_gpio_0: axi_gpio@41200000 {
+			xlnx,gpio-board-interface = "sws_8bits";
 			compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
-			xlnx,all-outputs = <1>;
+			xlnx,all-outputs = <0>;
 			xlnx,gpio-width = <8>;
 			xlnx,rable = <0>;
 			xlnx,dout-default = <0x00000000>;
@@ -27,13 +27,13 @@
 			clock-names = "s_axi_aclk";
 			xlnx,use-board-flow;
 			xlnx,tri-default = <0xFFFFFFFF>;
-			xlnx,name = "led";
-			xlnx,all-inputs = <0>;
+			xlnx,name = "axi_gpio_0";
+			xlnx,all-inputs = <1>;
 		};
-		switch: axi_gpio@41210000 {
-			xlnx,gpio-board-interface = "sws_8bits";
+		axi_gpio_1: axi_gpio@41210000 {
+			xlnx,gpio-board-interface = "leds_8bits";
 			compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
-			xlnx,all-outputs = <0>;
+			xlnx,all-outputs = <1>;
 			xlnx,gpio-width = <8>;
 			xlnx,rable = <0>;
 			xlnx,dout-default = <0x00000000>;
@@ -53,8 +53,8 @@
 			clock-names = "s_axi_aclk";
 			xlnx,use-board-flow;
 			xlnx,tri-default = <0xFFFFFFFF>;
-			xlnx,name = "switch";
-			xlnx,all-inputs = <1>;
+			xlnx,name = "axi_gpio_1";
+			xlnx,all-inputs = <0>;
 		};
 	};
 };

@@ -1,0 +1,2 @@
+arm-none-eabi-ar qc libbram.a CMakeFiles/bram.dir/xbram.c.obj CMakeFiles/bram.dir/xbram_g.c.obj CMakeFiles/bram.dir/xbram_intr.c.obj CMakeFiles/bram.dir/xbram_selftest.c.obj CMakeFiles/bram.dir/xbram_sinit.c.obj
+C:/Xilinx/Vitis/2023.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe libbram.a

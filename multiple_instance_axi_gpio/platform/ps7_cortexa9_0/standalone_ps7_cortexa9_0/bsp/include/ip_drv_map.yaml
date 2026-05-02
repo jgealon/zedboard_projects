@@ -1,4 +1,7 @@
-led:
+axi_gpio_0:
+- axi_gpio
+- gpio
+axi_gpio_1:
 - axi_gpio
 - gpio
 ps7_afi_0:
@@ -85,6 +88,3 @@ ps7_usb_0:
 ps7_xadc_0:
 - ps7_xadc
 - xadcps
-switch:
-- axi_gpio
-- gpio

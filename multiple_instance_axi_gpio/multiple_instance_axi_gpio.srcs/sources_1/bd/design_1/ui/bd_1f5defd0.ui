@@ -1,35 +1,35 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.490924",
-   "Default View_TopLeft":"10,-183",
+   "Default View_ScaleFactor":"0.704898",
+   "Default View_TopLeft":"27,-247",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1110 -y 50 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 4 -x 1110 -y 80 -defaultsOSRD
-preplace port leds_8bits -pg 1 -lvl 4 -x 1110 -y 380 -defaultsOSRD
-preplace port sws_8bits -pg 1 -lvl 4 -x 1110 -y 420 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 240 -y 110 -defaultsOSRD
-preplace inst switch -pg 1 -lvl 1 -x 240 -y 420 -defaultsOSRD
-preplace inst led -pg 1 -lvl 1 -x 240 -y 280 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 940 -y 220 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -x 620 -y 280 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 40 510 440 160 790
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 430 160n
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 3 20 530 NJ 530 800
-preplace netloc processing_system7_0_DDR 1 1 3 NJ 60 N 60 1090
-preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 80 N 80 N
-preplace netloc led_GPIO 1 1 3 430J 380 NJ 380 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 NJ 120 790
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 30 520 NJ 520 NJ 520 1090
-preplace netloc switch_GPIO 1 1 3 NJ 420 NJ 420 NJ
-preplace netloc ps7_0_axi_periph_M01_AXI 1 0 4 50 500 NJ 500 NJ 500 1080
-levelinfo -pg 1 0 240 620 940 1110
-pagesize -pg 1 -db -bbox -sgen 0 0 1230 540
+preplace port DDR -pg 1 -lvl 4 -x 1000 -y 270 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 1000 -y 300 -defaultsOSRD
+preplace port sws_8bits -pg 1 -lvl 4 -x 1000 -y -40 -defaultsOSRD
+preplace port leds_8bits -pg 1 -lvl 4 -x 1000 -y -120 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 330 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 830 -y 140 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 220 -y 140 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -x 220 -y -100 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 2 -x 560 -y -120 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 10 -190 430 80 690
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 40 410
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 3 30 -180 420 100 680
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 280 N 280 980J
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 300 N 300 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 440 60 N
+preplace netloc axi_gpio_0_GPIO 1 1 3 410J -40 NJ -40 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 4 20 0 NJ 0 NJ 0 970
+preplace netloc axi_gpio_1_GPIO 1 2 2 NJ -120 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 1 3 450 290 NJ 290 970
+levelinfo -pg 1 -10 220 560 830 1000
+pagesize -pg 1 -db -bbox -sgen -10 -200 1120 460
 "
 }
 {
-   "da_axi4_cnt":"2",
-   "da_board_cnt":"2",
+   "da_axi4_cnt":"4",
+   "da_board_cnt":"4",
    "da_ps7_cnt":"1"
 }

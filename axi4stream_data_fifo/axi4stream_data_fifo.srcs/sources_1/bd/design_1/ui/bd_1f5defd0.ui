@@ -1,0 +1,21 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-258,-107",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port s_axis -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port m_axis -pg 1 -lvl 2 -x 340 -y 60 -defaultsOSRD
+preplace port port-id_aresetn -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_aclk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 1 -x 170 -y 80 -defaultsOSRD
+preplace netloc aclk_1 1 0 1 20J 100n
+preplace netloc aresetn_1 1 0 1 20J 80n
+preplace netloc axis_data_fifo_0_M_AXIS 1 1 1 N 60
+preplace netloc s_axis_1 1 0 1 NJ 60
+levelinfo -pg 1 0 170 340
+pagesize -pg 1 -db -bbox -sgen -100 0 430 160
+"
+}
+0

@@ -1,0 +1,18 @@
+{
+  "name": "axi_timer_profiling_app",
+  "type": "HOST",
+  "platform": "C:\\Users\\JGEALON\\Documents\\ZedProjects\\axi_timer_profiling\\axi_timer_profiling_pfrm\\export\\axi_timer_profiling_pfrm\\axi_timer_profiling_pfrm.xpfm",
+  "domain": "standalone_ps7_cortexa9_0",
+  "cpuInstance": "ps7_cortexa9_0",
+  "cpuType": "cortex-a9",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_ps7_cortexa9_0",
+  "applicationFlow": "EMBEDDED",
+  "previousBuildStatusMap": {
+    "hw": "SUCCESS"
+  }
+}

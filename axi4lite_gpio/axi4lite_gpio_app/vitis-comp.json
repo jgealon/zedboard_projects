@@ -1,0 +1,18 @@
+{
+  "name": "axi4lite_gpio_app",
+  "type": "HOST",
+  "platform": "C:\\Users\\JGEALON\\Documents\\ZedProjects\\axi4lite_gpio\\axi4lite_gpio_pfrm\\export\\axi4lite_gpio_pfrm\\axi4lite_gpio_pfrm.xpfm",
+  "domain": "standalone_ps7_cortexa9_0",
+  "cpuInstance": "ps7_cortexa9_0",
+  "cpuType": "cortex-a9",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_ps7_cortexa9_0",
+  "applicationFlow": "EMBEDDED",
+  "previousBuildStatusMap": {
+    "hw": "SUCCESS"
+  }
+}

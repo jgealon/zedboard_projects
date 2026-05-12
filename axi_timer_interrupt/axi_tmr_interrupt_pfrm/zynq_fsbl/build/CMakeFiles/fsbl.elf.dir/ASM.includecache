@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/JGEALON/Documents/ZedProjects/axi_timer_interrupt/axi_tmr_interrupt_pfrm/zynq_fsbl/fsbl_handoff.S
+

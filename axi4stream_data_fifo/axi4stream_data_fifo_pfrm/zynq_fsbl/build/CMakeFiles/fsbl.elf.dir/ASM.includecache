@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/JGEALON/Documents/ZedProjects/axi4stream_data_fifo/axi4stream_data_fifo_pfrm/zynq_fsbl/fsbl_handoff.S
+

@@ -1,0 +1,28 @@
+/ {
+	amba_pl: amba_pl {
+		ranges;
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		axi_timer_0: axi_timer@42800000 {
+			compatible = "xlnx,axi-timer-2.0" , "xlnx,xps-timer-1.00.a";
+			xlnx,gen1-assert = <1>;
+			clock-frequency = <0x5f5e100>;
+			xlnx,trig0-assert = <1>;
+			xlnx,rable = <0>;
+			xlnx,count-width = <32>;
+			xlnx,ip-name = "axi_timer";
+			xlnx,one-timer-only = <1>;
+			reg = <0x42800000 0x10000>;
+			clocks = <&clkc 15>;
+			xlnx,gen0-assert = <1>;
+			xlnx,mode-64bit = <0>;
+			xlnx,edk-iptype = "PERIPHERAL";
+			xlnx,trig1-assert = <1>;
+			status = "okay";
+			clock-names = "s_axi_aclk";
+			xlnx,enable-timer2 = <0>;
+			xlnx,name = "axi_timer_0";
+		};
+	};
+};

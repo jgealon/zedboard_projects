@@ -1,0 +1,25 @@
+/ {
+	amba_pl: amba_pl {
+		ranges;
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		axi_timebase_wdt_0: axi_timebase_wdt@42600000 {
+			compatible = "xlnx,axi-timebase-wdt-3.0" , "xlnx,xps-timebase-wdt-1.00.a";
+			clock-frequency = <100000000>;
+			xlnx,rable = <0>;
+			xlnx,ip-name = "axi_timebase_wdt";
+			reg = <0x42600000 0x10000>;
+			clocks = <&clkc 15>;
+			xlnx,max-count-width = <32>;
+			xlnx,edk-iptype = "PERIPHERAL";
+			xlnx,sst-count-width = <8>;
+			xlnx,wdt-enable-once = <0x1>;
+			status = "okay";
+			clock-names = "s_axi_aclk";
+			xlnx,enable-window-wdt = <0x0>;
+			xlnx,name = "axi_timebase_wdt_0";
+			xlnx,wdt-interval = <0x1e>;
+		};
+	};
+};

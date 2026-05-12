@@ -1,0 +1,2 @@
+arm-none-eabi-ar qc libwdttb.a CMakeFiles/wdttb.dir/xwdttb.c.obj CMakeFiles/wdttb.dir/xwdttb_g.c.obj CMakeFiles/wdttb.dir/xwdttb_selftest.c.obj CMakeFiles/wdttb.dir/xwdttb_sinit.c.obj CMakeFiles/wdttb.dir/xwdttb_config.c.obj
+C:/Xilinx/Vitis/2023.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-ranlib.exe libwdttb.a
